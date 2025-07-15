@@ -2,9 +2,9 @@
   "name": "testcasegeneration",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "backend/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/index.js"
   },
   "keywords": [],
   "author": "",
@@ -22,3 +22,4 @@
     "string-similarity": "^4.0.4"
   }
 }
+
