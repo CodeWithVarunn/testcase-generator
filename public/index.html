@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Case Generator</title>
+
+    <!-- OCR Library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI Test Case Generator</h1>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider round"></span>
+        </label>
+        <span>🌞 / 🌙</span>
+      </div>
+
+      <textarea
+        id="requirement"
+        placeholder="Enter a feature requirement..."
+      ></textarea>
+
+      <label for="testtype">Select Test Type:</label>
+      <select id="testtype">
+        <option value="Smoke">Smoke</option>
+        <option value="Regression">Regression</option>
+        <option value="Functional">Functional</option>
+        <option value="Integration">Integration</option>
+      </select>
+
+      <label for="complexity">Select Complexity:</label>
+      <select id="complexity">
+        <option value="1">Easy (1–5 steps)</option>
+        <option value="2" selected>Medium (5–20 steps)</option>
+        <option value="3">Hard (20+ steps)</option>
+      </select>
+
+      <label for="testcount">Select Test Case Count:</label>
+      <select id="testcount">
+        <option value="1">1–5 Test Cases</option>
+        <option value="2" selected>5–20 Test Cases</option>
+        <option value="3">20+ Test Cases</option>
+      </select>
+
+      <div class="button-row">
+        <label for="imageInput" class="file-label">📷 Upload Screenshot</label>
+        <input type="file" id="imageInput" accept="image/*" multiple />
+
+        <button id="extractBtn" type="button">Extract Text From SS</button>
+        <button id="generateBtn" type="button">Generate Test Case</button>
+        <button id="copyBtn" type="button">📋 Copy Test Cases</button>
+        <button id="downloadTxtBtn" type="button">⬇️Download as .txt</button>
+        <button id="runTestBtn" type="button" onclick="window.open('run_test.html', '_blank')">
+          Run Test Case
+        </button>
+      </div>
+
+      <pre id="output" class="status-output"></pre>
+      <pre id="finalOutput" class="final-output"></pre>
+    </div>
+
+    <!-- Debug Reload Detection -->
+    <script>
+      window.addEventListener("beforeunload", () => {
+        console.warn("⚠️ Page is reloading...");
+      });
+      window.addEventListener("load", () => {
+        console.log("🌀 Page just loaded");
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.4.1/html-docx.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+

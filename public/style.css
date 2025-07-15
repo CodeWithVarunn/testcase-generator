@@ -1,0 +1,288 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: 100%;
+  height: 130px;
+  padding: 15px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin: 10px 0 6px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  background: #f1f1f1;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  display: block;
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+
+.file-label:hover {
+  background: #0056b3;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e7e34;
+}
+
+.status-output,
+.final-output {
+  background: #f9f9f9;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.final-output h3 {
+  color: #343a40;
+  margin-top: 20px;
+}
+
+.final-output p {
+  margin: 5px 0;
+}
+
+.final-output .test-case {
+  margin-bottom: 25px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 10px;
+}
+
+.final-output strong {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0d6efd;
+}
+
+/* Scrollbar Styling */
+.status-output::-webkit-scrollbar,
+.final-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.status-output::-webkit-scrollbar-thumb,
+.final-output::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 6px;
+}
+
+/* copy button*/
+#copyBtn {
+  background-color: #28a745;
+}
+
+#copyBtn:hover {
+  background-color: #28a745;
+}
+
+/* Download Button */
+#downloadTxtBtn {
+  background-color: #17a2b8;
+}
+
+#downloadTxtBtn:hover {
+  background-color: #117a8b;
+}
+
+#downloadDocxBtn {
+  background-color: #6f42c1;
+}
+
+#downloadDocxBtn:hover {
+  background-color: #5936a8;
+}
+
+/* dark and light theme */
+/* Light and Dark Mode Support */
+body.dark {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background: #1e1e1e;
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+}
+
+body.dark h1 {
+  color: #3da4b4;
+}
+
+body.dark textarea,
+body.dark select,
+body.dark .status-output,
+body.dark .final-output {
+  background: #2c2c2c;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.dark button {
+  background-color: #4caf50;
+}
+
+body.dark button:hover {
+  background-color: #388e3c;
+}
+
+body.dark .file-label {
+  background: #0d6efd;
+}
+
+body.dark .file-label:hover {
+  background: #0a58ca;
+}
+
+body.dark .final-output h3 {
+  color: #3da4b4;
+}
+
+/* Toggle Switch UI */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* New horizontal button row */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-row button,
+.button-row .file-label {
+  flex: 1;
+  min-width: 100px;
+  max-width: 160px;
+  margin: 6px 4px;
+  text-align: center;
+  padding: 10px 12px;
+}
+
+
+
+
+
