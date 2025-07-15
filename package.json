@@ -4,7 +4,7 @@
   "description": "AI-powered test case generator with execution support",
   "main": "backend/index.js",
   "scripts": {
-    "start": "node backend/index.js"
+    "start": "node server/index.js"
   },
   "keywords": ["testcase", "AI", "openai", "puppeteer"],
   "author": "Varun Gill",
