@@ -1,13 +1,13 @@
 {
   "name": "testcasegeneration",
   "version": "1.0.0",
-  "description": "",
+  "description": "AI-powered test case generator with execution support",
   "main": "backend/index.js",
   "scripts": {
     "start": "node backend/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["testcase", "AI", "openai", "puppeteer"],
+  "author": "Varun Gill",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -22,4 +22,5 @@
     "string-similarity": "^4.0.4"
   }
 }
+
 
